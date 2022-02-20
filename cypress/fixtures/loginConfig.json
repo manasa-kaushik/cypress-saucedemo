@@ -1,0 +1,21 @@
+{
+  "username": {
+    "standardUser": "standard_user",
+    "problemUser": "problem_user",
+    "performanceGlitchUser": "performance_glitch_user",
+    "lockedOut": "locked_out_user"
+  },
+  "password": "secret_sauce",
+  "firstName": "John",
+  "lastName": "Doe",
+  "postCode": "RG302HD",
+  "errors":{
+    "invalidUsernmae": "Epic sadface: Username and password do not match any user in this service",
+    "invalidPassword": "Epic sadface: Username and password do not match any user in this service",
+    "missingUsername": "Epic sadface: Username is required",
+    "unauthorised": "Epic sadface: Sorry, this user has been locked out.",
+    "missingFirstName": "Error: First Name is required",
+    "missingLastName": "Error: Last Name is required",
+    "missingPostCode": "Error: Postal Code is required"
+  }
+}
