@@ -3,6 +3,7 @@ export default class LoginPageObject {
   password = "[data-test='password']";
   loginButton = "[data-test='login-button']";
   loginConfig = require("../../fixtures/loginConfig.json");
+  logoutOption = "#logout_sidebar_link"
 
   login(userType) {
     cy.visit("/");
@@ -13,5 +14,8 @@ export default class LoginPageObject {
     }
     cy.get(this.password).type(passwordValue);
     cy.get(this.loginButton).click();
-  }
+  };
+  logout() {
+    cy.get(this.logoutOption).click();
+  };
 }

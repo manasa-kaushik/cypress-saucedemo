@@ -1,7 +1,9 @@
 import { Given, And, Then, When } from "cypress-cucumber-preprocessor/steps";
+import CommonPageObject from "../Common/CommonPageObject";
 import CartPageObject from "./CartPageObject";
 
 const cartPageObject = new CartPageObject();
+const commonPageObject = new CommonPageObject();
 
 Given("I see the products listed", () => {
   cy.get(cartPageObject.inventoryList)
@@ -56,4 +58,8 @@ And("I click on continue", () => {
 
 Then("I see the item total match with {string}", (price) => {
   cy.get(cartPageObject.totalItem).contains(price);
+});
+
+And("I click on the hamburger manu", () => {
+  commonPageObject.clickHamburger();
 });

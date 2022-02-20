@@ -31,3 +31,11 @@ Then("I see error message for {string}", (errorType) => {
 And("I click on close to dismiss the error", () => {
   commonPageObject.dismissErrorMessage();
 });
+
+And("I click on the hamburger menu", ()=>{
+  commonPageObject.clickHamburger();
+});
+
+Then("I click on logout", ()=>{
+  loginPageObject.logout();
+});

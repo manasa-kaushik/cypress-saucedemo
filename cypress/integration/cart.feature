@@ -26,6 +26,24 @@ Feature: cart
         And I see the added item "bikeLight" in the cart list page with label "Sauce Labs Bike Light"
         And I see the added item "bikeLight" in the cart list page with price "$9.99"
 
+    Scenario: Verify that user is able to logout and log back in to see the added item in the cart
+        Given I see the products listed
+        When I click on add to cart icon for product "backpack"
+        Then I see the product count "1" in the cart logo
+        And I click on add to cart icon for product "bikeLight"
+        Then I see the product count "2" in the cart logo
+        And I click on the hamburger menu
+        Then I click on logout
+        And I login from login page as "standardUser"
+        Then I see the inventory page
+        And I click on the cart icon
+        And I see the "2" items in the cart list
+        Then I see the added item "backpack" in the cart list page with label "Sauce Labs Backpack"
+        Then I see the added item "backpack" in the cart list page with price "$29.99"
+        And I see the added item "bikeLight" in the cart list page with label "Sauce Labs Bike Light"
+        And I see the added item "bikeLight" in the cart list page with price "$9.99"
+
+
     Scenario: Verify that user is able to add multiple items to the cart from products list page and verify item total
         When I click on add to cart icon for product "backpack"
         And I click on add to cart icon for product "bikeLight"
